@@ -8,6 +8,8 @@ Client.defaultGuildSchema.add('quoteChannel', 'textchannel')
 
 Client.defaultGuildSchema.add('logChannel', 'textchannel')
 
+Client.defaultGuildSchema.add('saydata', 'any')
+
 const AigisClient = new Client ({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
