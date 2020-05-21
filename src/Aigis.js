@@ -6,6 +6,8 @@ Client.use(require('klasa-dashboard-hooks'));
 
 Client.defaultGuildSchema.add('quoteChannel', 'textchannel')
 
+Client.defaultGuildSchema.add('logChannel', 'textchannel')
+
 const AigisClient = new Client ({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
