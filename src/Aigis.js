@@ -10,6 +10,9 @@ Client.defaultGuildSchema.add('logChannel', 'textchannel')
 
 Client.defaultGuildSchema.add('saydata', 'any')
 
+Client.defaultPermissionLevels
+    .add(5, ({ guild, member }) => guild && member.permissions.has('MANAGE_MESSAGES'))
+
 const AigisClient = new Client ({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
