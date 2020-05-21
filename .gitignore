@@ -6,3 +6,6 @@ src/data/.env
 
 # text files
 *.txt
+
+# bwd folder
+src/bwd/*
