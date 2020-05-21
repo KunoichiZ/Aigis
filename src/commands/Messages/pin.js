@@ -6,7 +6,8 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, { 
             description: 'Pins the selected message to the channel\'s pinned messages.',
-            usage: "<message:string>"
+            usage: "<message:string>",
+            permissionLevel: 5
         });
     }
 

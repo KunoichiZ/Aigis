@@ -7,7 +7,8 @@ module.exports = class extends Command {
         super(...args, { 
             aliases: ['del'],
             description: 'Deletes the message',
-            usage: "<amount:integer>"
+            usage: "<amount:integer>",
+            permissionLevel: 5
         });
     }
 
