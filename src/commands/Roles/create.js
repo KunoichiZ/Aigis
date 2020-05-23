@@ -23,7 +23,7 @@ module.exports = class extends Command {
             })
             .then(msg.send(`Created a role named ${name} with the color of #${hex}`))
             .catch(console.error);
-            
+
             let colors = msg.guild.settings.get('colors')
             colors.push(name)
             msg.guild.settings.set('colors', colors)
