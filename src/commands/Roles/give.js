@@ -5,7 +5,8 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, { 
             description: 'Assigns yourself a role with a specific color',
-            usage: '(rolename:string)'
+            usage: '(rolename:string)',
+            extendedHelp: 'This is the same as Aigis\' old \`give color` command'
         });
     }
 
