@@ -32,8 +32,7 @@ module.exports = class extends Command {
                     .setDescription(fetchdMsg.content)
                     .setFooter(formatted);
                 const channel = this.client.channels.get(msg.guild.settings.get('quoteChannel'));
-                return channel.send(quoteEmbed);
-                // return quoteChannel.send(quoteEmbed)    
+                return channel.send(quoteEmbed);  
             });
         }
     }
