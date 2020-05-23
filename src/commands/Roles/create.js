@@ -5,6 +5,7 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, { 
             description: 'Create a role with a specific color',
+            extendedHelp: 'This is the same as Aigis\' old \`create color` command',
             usage: '(hex:regex/#?([\\da-f]{6})/i) (name:string)',
             usageDelim: ',',
             permissionLevel: 6
