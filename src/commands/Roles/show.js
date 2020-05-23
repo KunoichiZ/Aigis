@@ -5,7 +5,8 @@ module.exports = class extends Command {
 
     constructor(...args) {
         super(...args, { 
-            description: 'Lists all color roles that you can assign to yourself'
+            description: 'Lists all color roles that you can assign to yourself',
+            usage: '<colors>'
         });
     }
 
