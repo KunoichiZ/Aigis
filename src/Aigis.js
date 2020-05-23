@@ -10,6 +10,8 @@ Client.defaultGuildSchema.add('logChannel', 'textchannel')
 
 Client.defaultGuildSchema.add('saydata', 'any')
 
+Client.defaultGuildSchema.add('colors', 'any')
+
 Client.defaultPermissionLevels
     .add(5, ({ guild, member }) => guild && member.permissions.has('MANAGE_MESSAGES'))
 
