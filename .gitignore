@@ -9,3 +9,6 @@ src/data/.env
 
 # bwd folder
 src/bwd/*
+
+# DS_Store
+.DS_Store
