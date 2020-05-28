@@ -14,7 +14,11 @@ module.exports = class extends Command {
 
     run(msg, [amount]) {
         msg.channel.bulkDelete(amount + 1)
-            .then(messages => msg.send(`Bulk deleted ${messages.size} messages`))
+            .then(messages => msg.send(`Bulk deleted ${messages.size} messages`)
+            // .then(msg => {
+            //     msg.delete()
+            //   })
+            )
             .catch(console.error);
     }
 };
