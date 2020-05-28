@@ -21,20 +21,41 @@ module.exports = class extends Command {
             msg.channel.messages.fetch(quote)
             .then(message => {
                 const fetchdMsg = message;
-                const channelID = fetchdMsg.channel.id;
-                const user = this.client.users.get(fetchdMsg.author.id);
-                const member = msg.guild.members.get(fetchdMsg.author.id);
-                const timestamp = fetchdMsg.createdTimestamp;
-                const formatted = moment(timestamp).format('L');
+                if(fetchdMsg.attachments.size == 0) {
+                    const channelID = fetchdMsg.channel.id;
+                    const user = this.client.users.get(fetchdMsg.author.id);
+                    const member = msg.guild.members.get(fetchdMsg.author.id);
+                    const timestamp = fetchdMsg.createdTimestamp;
+                    const formatted = moment(timestamp).format('L');
 
-                const quoteEmbed = new MessageEmbed()
-                    .setAuthor(fetchdMsg.author.username + "#" + fetchdMsg.author.discriminator, user.displayAvatarURL())
-                    .setColor(member.displayHexColor)
-                    .setDescription(stripIndents`Posted in <#${channelID}>:
-                    \n${fetchdMsg.content}`)
-                    .setFooter("on " + formatted);
-                const channel = this.client.channels.get(msg.guild.settings.get('quoteChannel'));
-                return channel.send(quoteEmbed);  
+                    const quoteEmbed = new MessageEmbed()
+                        .setAuthor(fetchdMsg.author.username + "#" + fetchdMsg.author.discriminator, user.displayAvatarURL())
+                        .setColor(member.displayHexColor)
+                        .setDescription(stripIndents`Posted in <#${channelID}>:
+                        \n${fetchdMsg.content}`)
+                        .setFooter("on " + formatted);
+                    const channel = this.client.channels.get(msg.guild.settings.get('quoteChannel'));
+                    return channel.send(quoteEmbed);  
+                } else {
+                    let url;
+                    message.attachments.forEach(attachment => {
+                        url = attachment.url;
+                    });
+                    const channelID = fetchdMsg.channel.id;
+                    const user = this.client.users.get(fetchdMsg.author.id);
+                    const member = msg.guild.members.get(fetchdMsg.author.id);
+                    const timestamp = fetchdMsg.createdTimestamp;
+                    const formatted = moment(timestamp).format('L');
+
+                    const quoteEmbed = new MessageEmbed()
+                        .setAuthor(fetchdMsg.author.username + "#" + fetchdMsg.author.discriminator, user.displayAvatarURL())
+                        .setColor(member.displayHexColor)
+                        .setDescription(`Posted in <#${channelID}>:`)
+                        .setImage(url)
+                        .setFooter("on " + formatted);
+                    const channel = this.client.channels.get(msg.guild.settings.get('quoteChannel'));
+                    return channel.send(quoteEmbed);  
+                }
             });
         }
     }
