@@ -1,6 +1,7 @@
 const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
+const { stripIndents } = require('common-tags');
 
 module.exports = class extends Command {
 
@@ -14,13 +15,13 @@ module.exports = class extends Command {
 
     run(msg, [quote]) {
         let quoteChannel = msg.guild.settings.get('quoteChannel');
-        console.log(quoteChannel)
         if(!quoteChannel) {
             msg.send("No quote channel has been configured!" + ` Use \`${msg.guild.settings.get('prefix')}conf set quoteChannel\` to set the quote channel.`)
         } else {
             msg.channel.messages.fetch(quote)
             .then(message => {
                 const fetchdMsg = message;
+                const channelID = fetchdMsg.channel.id;
                 const user = this.client.users.get(fetchdMsg.author.id);
                 const member = msg.guild.members.get(fetchdMsg.author.id);
                 const timestamp = fetchdMsg.createdTimestamp;
@@ -29,8 +30,9 @@ module.exports = class extends Command {
                 const quoteEmbed = new MessageEmbed()
                     .setAuthor(fetchdMsg.author.username + "#" + fetchdMsg.author.discriminator, user.displayAvatarURL())
                     .setColor(member.displayHexColor)
-                    .setDescription(fetchdMsg.content)
-                    .setFooter(formatted);
+                    .setDescription(stripIndents`Posted in <#${channelID}>:
+                    \n${fetchdMsg.content}`)
+                    .setFooter("on " + formatted);
                 const channel = this.client.channels.get(msg.guild.settings.get('quoteChannel'));
                 return channel.send(quoteEmbed);  
             });
