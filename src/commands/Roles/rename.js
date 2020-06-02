@@ -7,7 +7,9 @@ module.exports = class extends Command {
             description: 'Change an existing color role\'s name.',
             usage: '(rolename:string) (newname:string)',
             usageDelim: ',',
-            extendedHelp: 'This is the same as Aigis\' old \`rename color` command'
+            extendedHelp: 'This is the same as Aigis\' old \`rename color` command',
+            permissionLevel: 6,
+            requiredPermissions: 'MANAGE_ROLES'
         });
     }
 
