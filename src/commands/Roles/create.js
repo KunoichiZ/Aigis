@@ -8,7 +8,8 @@ module.exports = class extends Command {
             extendedHelp: 'This is the same as Aigis\' old \`create color` command',
             usage: '(hex:regex/#?([\\da-f]{6})/i) (name:string)',
             usageDelim: ',',
-            permissionLevel: 6
+            permissionLevel: 6,
+            requiredPermissions: 'MANAGE_ROLES'
         });
     }
 
