@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "klasa": "github:dirigeants/klasa#settings",
     "klasa-dashboard-hooks": "github:kyranet/klasa-dashboard-hooks#master",
+    "markovchain": "^1.0.2",
     "moment": "^2.26.0",
     "moment-duration-format": "2.2.2"
   },

@@ -169,6 +169,13 @@ is-number@^7.0.0:
     "@klasa/request-handler" "^0.0.3"
     fs-nextra "^0.4.5"
 
+markovchain@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/markovchain/-/markovchain-1.0.2.tgz#58b38643fb6093cd5b62455b7b1e7bbfe56d7e53"
+  integrity sha1-WLOGQ/tgk81bYkVbex57v+VtflM=
+  dependencies:
+    pick-one-by-weight "~1.0.0"
+
 mime-db@1.44.0:
   version "1.44.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
@@ -200,6 +207,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+pick-one-by-weight@~1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/pick-one-by-weight/-/pick-one-by-weight-1.0.2.tgz#fa0893276c848c8b7dd2f446e99f89d83c4cee86"
+  integrity sha1-+giTJ2yEjIt90vRG6Z+J2DxM7oY=
 
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
