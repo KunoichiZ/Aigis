@@ -12,6 +12,13 @@ Client.defaultGuildSchema.add('saydata', 'any')
 
 Client.defaultGuildSchema.add('colors', 'any')
 
+Client.defaultGuildSchema.add('bans', 'any')
+
+Client.defaultUserSchema.add('warns', 'any')
+
+Client.defaultClientSchema
+	.add('commandUses', 'integer', { 'default': 0, 'configurable': false })
+
 Client.defaultPermissionLevels
     .add(5, ({ guild, member }) => guild && member.permissions.has('MANAGE_MESSAGES'))
 
