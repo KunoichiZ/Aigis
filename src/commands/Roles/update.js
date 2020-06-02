@@ -7,7 +7,9 @@ module.exports = class extends Command {
             description: 'Change an existing role\'s color value.',
             usage: '(rolename:string) (hex:regex/#?([\\da-f]{6})/i)',
             usageDelim: ',',
-            extendedHelp: 'This is the same as Aigis\' old \`update color` command'
+            extendedHelp: 'This is the same as Aigis\' old \`update color` command',
+            permissionLevel: 6,
+            requiredPermissions: 'MANAGE_ROLES'
         });
     }
 
