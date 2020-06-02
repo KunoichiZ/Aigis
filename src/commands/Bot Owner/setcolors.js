@@ -4,7 +4,9 @@ module.exports = class extends Command {
 
     constructor(...args) {
         super(...args, { 
-            description: 'Sets the colored roles for the guild'
+            description: 'Sets the colored roles for the guild',
+            permissionLevel: 10,
+			hidden: true
         });
     }
 
