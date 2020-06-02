@@ -7,7 +7,8 @@ module.exports = class extends Command {
         super(...args, { 
             description: 'Lock a channel',
             aliases: ['ld', 'lockdown'],
-            requiredPermissions: ['MANAGE_CHANNELS']
+            requiredPermissions: ['MANAGE_CHANNELS'],
+            permissionLevel: 6,
         });
     }
 
